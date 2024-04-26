@@ -28,7 +28,7 @@ jobs:
     - name: Build with Gradle
       run: |
         cd ./android
-        ./gradlew assembleRelease
+        ./gradlew build
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
