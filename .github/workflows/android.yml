@@ -20,16 +20,15 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Change directory
+    - name: Check directory
       run: |
-        cd ./android
-        ls .
+        ls ./android
     - name: Grant execute permission for gradlew
-      run: chmod +x ./gradlew
+      run: chmod +x ./android/gradlew
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./android/gradlew build
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
         name: Android-latest
-        path: build
+        path: android/build
